@@ -30,10 +30,15 @@ func Clock(cCtx *cli.Context) error {
 	if (cCtx.String("color") == "hour-format"){
 		use12HourFormat = true
 	}
+	offset := cCtx.Int("zone-offset")
 	go func() {
 		for {
 			termWidth, termHeight := termbox.Size()
 			current := time.Now()
+			if offset != 24 {
+				loc := time.FixedZone("CUST", offset * 3600)
+				current = time.Now().In(loc)
+			}
 			termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
 
 			NowTime := formatTime(current, use12HourFormat)

@@ -124,6 +124,12 @@ func main() {
 						Aliases: []string{"hf"},
 						Usage:   "Set the clock 24 hr or 12hr (type 24 or 12)",
 					},
+					&cli.IntFlag{
+						Name:    "zone-offset",
+						Aliases: []string{"zo"},
+						Value:   24,
+						Usage:   "Set time zone offset in hour",
+					},
 				},
 			},
 		},
