@@ -111,8 +111,8 @@ func main() {
 					&cli.StringFlag{
 						Name:    "dateformate",
 						Aliases: []string{"df"},
-						Value:   "2006/02/01",
-						Usage:   "Set the clock date formate(2006/02/01)YYYY/MM/DD",
+						Value:   "2006-01-02",
+						Usage:   "Set the clock date formate(2006-01-02)YYYY-MM-DD",
 					},
 					&cli.StringFlag{
 						Name:    "colon-color",
